@@ -21,8 +21,8 @@ pipeline {
             steps {
                 catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
                     bat '''
-                        set PYTHONPATH=%WORKSPACE%
-                        pytest --junitxml=result-unit.xml test\\unit
+                        set PYTHONPATH=C:\\Users\\cbrr3\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\
+                        C:\\Users\\cbrr3\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pytest --junitxml=result-unit.xml test\\unit
                     '''
                }
             }
@@ -35,9 +35,9 @@ pipeline {
                     set FLASK_APP=app\\api.py
                     set FLASK_ENV=development
                     start flask run
-                    start java -jar E:\Caso1\helloworld\wiremock\\wiremock.jar --port 9090 --root-dir E:\Caso1\helloworld\wiremock
+                    start java -jar E:\\Caso1\\helloworld\\wiremock\\wiremock.jar --port 9090 --root-dir E:\\Caso1\\helloworld\\wiremock\\
                     set PYTHONPATH=%WORKSPACE%
-                    pytest --junitxml=result-rest.xml test\\rest
+                    C:\\Users\\cbrr3\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pytest --junitxml=result-rest.xml test\\rest
                 '''
             }    
         }
@@ -50,3 +50,4 @@ pipeline {
      
     }
 }
+
